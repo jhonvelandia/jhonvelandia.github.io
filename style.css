@@ -1,0 +1,420 @@
+body {
+  margin: 0 auto; /*ajusta el tamaño de margen externo entre cajas */
+  padding: 50px; /*ajusta el tamaño del borde interno de la caja */  
+  color: #333; /*ajusta el color de las letras*/
+  font-size: 14px; /*ajusta el tamaño de las letras*/ 
+  font-family: serif; /*ajusta la tipogrtafia de la pagina o parrafo deseado*/
+  line-height: 1.5; /*ajusta el interlineado o sangria entre parrafos*/
+  background-color: #ebebeb; /*ajusta el color de fondo de la pagina o caja*/
+}
+
+:root { /*raiz del documento, se usa para definir variables globales CSS*/
+  --color-fondo: #aed0d6; /*ajusta el color de fondo de la pagina o caja*/
+  --color-texto: #ffffff; /*ajusta el color de las letras de la pagina o caja*/
+  --color-borde: #005a9e; /*ajusta el color del borde de la pagina o caja*/
+  --padding: 12px;
+  --yellow: #ffeb3b;
+  --orange: #ff9800;
+  --dark: #546e7a;
+
+}
+/* variables css*/
+.variables .main-section {
+  --padding: 20px 30px; /*ajusta el tamaño del borde interno de la caja solo en main-section*/
+  padding: var(--padding);  
+  background: #ffca28;
+}
+
+.paragraph {
+  padding: var(--padding);  
+  background: #ff9800;
+}
+
+p {
+  margin-top: 0; /*ajusta el margen superior del parrafo*/
+ /*margin-bottom: 1em; /*ajusta el margen inferior del parrafo*/
+}
+
+.columnas{
+  background-color: var(--color-fondo); /*ajusta el color de fondo de la caja*/
+}
+
+.columns-2 {
+    /*column-count: 2; /*ajusta el numero de columnas*/
+  columns: 250px 2; /*ajusta el ancho de las columnas y el numero de columnas*/
+  /*column-width: 250px; /*ajusta el ancho de las columnas*/
+  column-gap: 30px; /*ajusta el espacio entre columnas*/
+  column-fill: auto; /*ajusta el relleno de las columnas*/
+  column-rule: 2px solid black; /*ajusta el grosor y color de la linea entre columnas*/
+}
+
+.extender-titulo {
+  text-align: center;
+  column-span: all; /*ajusta el texto al centro y extiende el titulo a todas las columnas*/
+}
+
+.img-column {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; /*ajusta la imagen al centro de la columna*/
+}
+
+.break-inside {
+  border: 1px solid;
+  break-inside: avoid; /*ajusta el borde de la caja y evita que se rompa el contenido dentro de la caja*/
+  /*break-before: column; /*ajusta el contenido antes de la columna*/
+  /*break-after: column; /*ajusta el contenido despues de la columna*/
+}
+
+.container-un-med {
+  display: flex; /*ajusta el contenedor a un modelo de caja flexible*/
+  flex-wrap: wrap; /*ajusta el contenedor a un modelo de caja flexible y permite que los elementos se ajusten a varias lineas*/
+  align-items: center; /*ajusta los elementos al centro del contenedor*/
+  gap: 20px; /*ajusta el espacio entre los elementos del contenedor*/
+  justify-content: center; /*ajusta el contenido al centro del contenedor*/
+}
+
+.box {
+  border: 2px solid #0078d7; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #0078d7;
+  font-weight: bold;
+  background: #e6f7ff;
+}
+
+.px {
+  width: 100px;
+  height: 100px;
+}
+
+.cm {
+  width: 5cm;
+  height: 5cm;
+}
+
+.mm {
+  width: 50mm;
+  height: 50mm;
+}
+
+.in {
+  width: 2in;
+  height: 2in;
+}
+
+.pt {
+  width: 72pt;
+  height: 72pt;
+}
+
+table {
+  border-collapse: collapse;
+
+  color: #212529;
+}
+
+td,
+th {
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+}
+
+th {
+  border: 1px solid #2f343a;
+  border-bottom: 2px solid #616364;
+}
+
+td {
+  border: 1px solid #2f343a;
+}
+
+caption {
+  margin-top: 25px;
+
+  font-size: 0.7em;
+  text-align: right;
+
+  caption-side: bottom;
+}
+
+form {
+  font-family: sans-serif;
+  max-width: 500px;
+  height: auto;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #3F3DFF;
+  border-radius: 10px;
+  background-color: #f9f9ff;
+}
+
+.personal label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.info-adicional label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.info-adicional input {
+  width: 5%;
+  padding: 0;
+  margin: 8px;
+  border-radius: 2px;
+}
+
+textarea {
+ resize: none;  /*resize evita que el usuario le cambien el tamaño al textarea*/
+ width: 200px; 
+}
+
+button {
+  background-color: #3F3DFF;
+  color: white;
+  border: none;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer; /*cambia el cursor a una mano cuando se pasa por encima del boton*/
+}
+
+button:hover {
+  background-color: #2c2ccf; /*cambia el color del boton cuando se pasa por encima*/
+}
+
+/* Pseudoclases en enlaces */
+
+.pseudoclases a {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+/* Enlace normal (sin visitar) */
+.pseudoclases a:link {
+  color: blue;
+  text-decoration: underline; /* Subrayado por defecto */
+}
+
+/* Enlace visitado */
+.pseudoclases a:visited {
+  color: purple;
+}
+
+/* Cuando el cursor está sobre el enlace */
+.pseudoclases a:hover {
+  color: green;
+  text-decoration: none; /* Quitamos el subrayado al pasar el cursor */
+}
+
+/* Mientras el usuario está haciendo clic */
+.pseudoclases a:active {
+  color: red;
+}
+
+/* Cuando el enlace recibe foco con el teclado */
+.pseudoclases a:focus {
+  outline: 2px solid orange; /* Se resalta con un borde naranja */
+  border-radius: 5px;
+}
+
+.pseudoclases section {
+  font: 16px/1.5 monospace;
+}
+
+[class^="figure"] { /*  */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 5px;  
+  color: #1c1c1c;  
+  font-weight: bold;
+}
+
+.figure-circle {
+  border-radius: 50%;
+}
+  /* even para seleccionar numeros pares */
+  /* odd para seleccionar numeros impares */
+
+.child div:nth-child(even), /* nth-child se usa para seleccionar y aplicar un estilo al siguiente elemento sin importar que sea */
+.type div:nth-of-type(even) { /* nth-type se usa para selecconar y aplicar un estilo al siguiente elemento del mismo tipo*/
+  /*  Red Color  */
+  background: #f44336;
+}
+
+.child div:nth-child(odd),
+.type div:nth-of-type(odd) {
+  /*  Green Color  */
+  background: #4caf50;
+}
+
+/*pseudoelementos*/
+
+.pseudoelementos {
+  margin: 20px; /* Margen alrededor del bloque */
+  padding: 10px; /* Relleno interno del bloque */
+  background-color: #f0f0f0; /* Color de fondo del bloque */
+  border: 1px solid #ccc; /* Borde del bloque */
+}
+.pseudoelementos p::before {
+  content: "Contenido antes del bloque "; /* Contenido que se muestra antes del bloque */
+  color: #ff0000; /* Cambia el color del texto */
+  font-weight: bold; /* Hace el texto en negrita */  
+}
+.pseudoelementos p::after {
+  content: " Contenido después del bloque"; /* Contenido que se muestra después del bloque */
+  color: #0000ff; /* Cambia el color del texto */
+  font-style: italic; /* Hace el texto en cursiva */
+}
+.pseudoelementos-list {
+  list-style: none; /* Elimina los puntos de la lista */
+}
+.pseudoelementos-list li::before {
+  content: "✅ "; /* Agregamos un check antes de cada elemento */
+  color: #008000; /* Cambia el color del punto */
+  font-size: 18px;
+}
+
+.pseudoelementos h2::first-letter {
+  color: #ff0000; /* Cambia el color del primer carácter */
+  font-size: 24px; /* Aumenta el tamaño del primer carácter */
+  font-weight: bold; /* Hace el primer carácter en negrita */
+}
+
+.backgra-fondo {
+  display: grid; /* Crea un diseño de cuadrícula */
+  grid-gap: 30px; /* Espacio entre las celdas de la cuadrícula */
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  font: 14px/1.5 monospace; /* Fuente y tamaño del texto */
+}
+
+.backgra-fondo .section {
+  height: 200px;
+  padding: 10px 50px;
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es demasiado grande */
+  font-size: 18px;
+  box-sizing: border-box;
+  background: #ffeb3b;
+}
+
+.backgra-fondo .image {
+  background-image: url("https://assets.codepen.io/1425525/Hexlet_Logo-01-svg__1_.png"); /* URL de la imagen de fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen de fondo */
+}
+
+.backgra-fondo .bg-scroll {
+  background-attachment: scroll; /* El fondo se desplaza con el contenido */
+}
+
+.backgra-fondo .bg-fixed {
+  background-attachment: fixed; /* El fondo permanece fijo en la ventana del navegador */
+}
+
+.backgra-fondo .bg-local {
+  background-attachment: local; /* El fondo se desplaza con el contenido del elemento */
+}
+
+/*degradado*/
+
+.gradien  {
+  margin: 10px;
+  width: 200px;
+  height: 200px;  
+  background: linear-gradient(#ff9800, #ffeb3b);
+}
+
+.manufacturing-consent-regular {
+  font-family: "Manufacturing Consent", system-ui; /* Usa la fuente Manufacturing Consent */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.degradados {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  margin: 20px 0 0 20px;
+  padding: 0;
+  font: 18px/1.5 sans-serif;
+}
+
+.card {
+  width: 330px;
+  height: 430px;
+  padding: 30px;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 10px; 
+  color: #fff;
+  background: linear-gradient(45deg, #4158d0 0%, #c850c0 40%, #642b1a 90%); /* degradado lineal con tres colores */
+}
+
+.card-2 {
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;  
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #4158d0 0%, #4158d0 40%,
+    #c850c0 40%, #c850c0 90%,
+    #ffcc70 90%, #ffcc70 100%
+  );/*  degradado lineal con tres colores */
+}
+
+[class^="gradient"] { /* Selecciona todas las clases que comienzan con "gradient" */
+  width: 100px;
+  height: 100px;
+}
+
+.gradient {  
+  background: linear-gradient(
+    var(--yellow), var(--yellow) 10%,
+    var(--orange) 10%, var(--orange) 20%
+  ); /* Crea un degradado lineal con dos colores */
+}
+
+.gradient-repeating {
+  background: repeating-linear-gradient(
+    var(--yellow), var(--yellow) 10%,
+    var(--orange) 10%, var(--orange) 20%
+  ); /* Crea un degradado lineal repetido con dos colores */
+}
+
+.gradien-radial {
+  width: 150px;
+  height: 150px;
+  margin:10px;
+  background: radial-gradient(#4158d0, #c850c0); /* Crea un degradado radial con dos colores */
+}
+
+.gradien-repetido {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background: repeating-linear-gradient(45deg,
+    var(--orange), var(--orange) 20px,
+    var(--dark) 20px, var(--dark) 25px,
+    var(--yellow) 25px, var(--yellow) 50px
+  );
+}
